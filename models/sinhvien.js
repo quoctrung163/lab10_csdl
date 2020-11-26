@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { ObjectID } = require('mongodb');
 const mongoose = require('mongoose');
 
 const SinhVien = mongoose.model('SinhVien',
@@ -15,9 +16,9 @@ const SinhVien = mongoose.model('SinhVien',
       default: "",
       maxlength: 50
     },
-    NamSinh: {
+    Namsinh: {
       type: Number,
-      default: 1,
+      default: 0,
       minlength: 1,
       maxlength: 10
     },
@@ -58,7 +59,7 @@ function validateSinhVien(sinhvien) {
   const schema = Joi.object({
     MSSV: Joi.string().min(6).max(8),
     Hoten: Joi.string().min(0).max(50),
-    NamSinh: Joi.number(),
+    Namsinh: Joi.number(),
     DiemMon1: Joi.number(),
     DiemMon2: Joi.number(),
     DiemMon3: Joi.number(),

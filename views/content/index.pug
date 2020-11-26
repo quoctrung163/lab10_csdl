@@ -1,0 +1,32 @@
+h2 Danh sách sinh viên
+table.table
+  thead
+    tr
+      th(scope="col") MSSV
+      th(scope="col") Hoten
+      th(scope="col") NamSinh
+      th(scope="col") DiemMon1
+      th(scope="col") DiemMon2
+      th(scope="col") DiemMon3
+      th(scope="col") Email
+      th(scope="col") DienThoai
+      th(scope="col") Sửa
+      th(scope="col") Xoá
+  tbody
+    each sv in sinhvien
+      tr
+        th(scope="row")= sv.MSSV
+        td= sv.Hoten
+        td= sv.Namsinh
+        td= sv.DiemMon1
+        td= sv.DiemMon2
+        td= sv.DiemMon3
+        td= sv.Email
+        td= sv.DienThoai
+        td
+          button.btn.btn-primary 
+            a.link-light(href=`/${sv._id}`) Sửa sv
+        td
+          //- button.btn.btn-primary Xoá
+          form(method='POST' action=`/${sv._id}?_method=DELETE`)
+            button.btn.btn-primary(type='submit') Xoá sv

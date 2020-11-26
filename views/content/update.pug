@@ -1,0 +1,43 @@
+h2 Cập nhật sinh viên
+form.mb-5.pb-5(method='POST' action=`/${sinhvien._id}?_method=PUT` target='_blank')
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="MSSV") MSSV
+    .col-sm-3
+      input(type='text' name='MSSV' value= sinhvien.MSSV)
+  
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="Hoten") Hoten
+    .col-sm-3
+      input(type='text' name='Hoten' value= sinhvien.Hoten)
+  
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="Namsinh") NamSinh
+    .col-sm-3
+      input(type='text' name='Namsinh' value= sinhvien.Namsinh)
+
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="DiemMon1") Diemmon1
+    .col-sm-3
+      input(type='text' name='DiemMon1' value= sinhvien.DiemMon1)
+
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="DiemMon2") Diemmon2
+    .col-sm-3
+      input(type='text' name='DiemMon2' value= sinhvien.DiemMon2)
+
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="DiemMon3") Diemmon3
+    .col-sm-3
+      input(type='text' name='DiemMon3' value= sinhvien.DiemMon3)
+
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="Email") Email
+    .col-sm-3
+      input(type='text' name='Email' value= sinhvien.Email)
+
+  .mb-3.row
+    label.col-sm-1.col-form-label(for="DienThoai") DienThoai
+    .col-sm-3
+      input(type='text' name='DienThoai' value= sinhvien.DienThoai)
+  
+  input.btn.btn-primary(type='submit' value='Cập nhật')
