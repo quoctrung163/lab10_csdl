@@ -1,23 +1,18 @@
-div.title-home
-  h2.title Danh sách sinh viên 
-  form(method='GET' action=`/add`)
-    button.btn.btn-primary(type='submit') Thêm sinh viên
-
-table.table
-  thead
-    tr
-      th(scope="col") MSSV
-      th(scope="col") Hoten
-      th(scope="col") NamSinh
-      th(scope="col") DiemMon1
-      th(scope="col") DiemMon2
-      th(scope="col") DiemMon3
-      th(scope="col") Email
-      th(scope="col") DienThoai
-      th(scope="col") Sửa
-      th(scope="col") Xoá
-  tbody
-    each sv in sinhvien
+each sv in sinhvien
+  table.table
+    thead
+      tr
+        th(scope="col") MSSV
+        th(scope="col") Hoten
+        th(scope="col") NamSinh
+        th(scope="col") DiemMon1
+        th(scope="col") DiemMon2
+        th(scope="col") DiemMon3
+        th(scope="col") Email
+        th(scope="col") DienThoai
+        th(scope="col") Sửa
+        th(scope="col") Xoá
+    tbody
       tr
         th(scope="row")= sv.MSSV
         td= sv.Hoten

@@ -3,28 +3,32 @@ const express = require('express');
 const router = express.Router();
 const validator = require('validator');
 
-
 router.get('/', async (req, res, next) => {
-  const sinhvien = await SinhVien.find();
-  res.render('index', {
-    sinhvien: sinhvien
-  });
+  try {
+    const sinhvien = await SinhVien.find();
+    res.status(200).render('index', {
+      sinhvien: sinhvien
+    });
+  } catch (err) {
+    res.status(400).send(err);
+  }
   next();
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/student/:id', async (req, res, next) => {
   if (!validator.isMongoId(req.params.id)) {
     // err
     return;
   } else {
     const sinhvien = await SinhVien.findById(req.params.id);
-    res.render('change', {
+    res.status(200).render('change', {
       sinhvien: sinhvien
     })
   }
+  next();
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/student', async (req, res, next) => {
   const { error } = await validateSinhVien(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -44,7 +48,7 @@ router.post('/', async (req, res, next) => {
   next();
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/student/:id', async (req, res, next) => {
   const { error } = validateSinhVien(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -64,7 +68,7 @@ router.put('/:id', async (req, res, next) => {
   next();
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/student/:id', async (req, res, next) => {
   const sinhvien = await SinhVien.findByIdAndRemove(req.params.id);
 
   if (!sinhvien) return res.status(404).send(`Sinh vien co ma ${req.params.id} khong ton tai`);
@@ -72,4 +76,4 @@ router.delete('/:id', async (req, res, next) => {
   next();
 });
 
-module.exports = router;
+module.exports = router;  

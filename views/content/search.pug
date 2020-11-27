@@ -1,0 +1,15 @@
+.search-anime
+  .row.d-flex.justify-content-start
+    .col-12.col-lg-12.col-md-12.col-xl-12
+      a.title-link(href='#')
+        p.h5.mt-5.mb-3
+          | T&igrave;m ki&#x1EBF;m!&nbsp;
+          i.fas.fa-angle-right
+  .row
+    .col-12
+      #custom-search-input
+        form(action="/search", method="GET").input-group
+          input.search-query.form-control(type='search', name="q", placeholder='Tìm kiếm sinh viên (⁎˃ᆺ˂)')
+          span.input-group-btn
+            button.btn.btn-primary(type='button', disabled='')
+              span.fa.fa-search

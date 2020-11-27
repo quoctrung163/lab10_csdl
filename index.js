@@ -6,6 +6,8 @@ const bodyParser = require(`body-parser`);
 const methodOverride = require('method-override');
 
 const home = require('./routes/home');
+const add = require('./routes/add');
+const search = require('./routes/search');
 const path = require(`path`);
 const databaseName = 'crudsinhvien';
 
@@ -34,8 +36,10 @@ app.use(
     extended: true
   })
 );
-
+// app.use('/', index);
 app.use('/', home);
+app.use('/add', add);
+app.use('/search', search);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

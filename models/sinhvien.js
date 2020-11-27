@@ -1,5 +1,4 @@
 const Joi = require('joi');
-const { ObjectID } = require('mongodb');
 const mongoose = require('mongoose');
 
 const SinhVien = mongoose.model('SinhVien',

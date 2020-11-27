@@ -18,3 +18,96 @@
   font-size: 0.92rem !important;
   text-transform: capitalize !important;
 }
+
+.title-home {
+  display: flex;
+  flex-direction: row;
+}
+
+h2.title {
+  margin-right: 1rem;
+}
+
+/* title-link */
+.title-link {
+  text-transform: uppercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.title-link:link {
+  color: #32323d;
+  text-decoration: none;
+}
+
+.title-link:visited {
+  color: #32323d;
+}
+
+.title-link:hover {
+  color: #2882bc;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.title-link:active {
+  color: #32323d;
+  transition: all 0.1s;
+}
+
+/* search-box */
+#custom-search-input {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#custom-search-input .search-query {
+  width: 100%;
+  padding-right: 3px;
+  padding-left: 15px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 0;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: absolute;
+  right: 0;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #D9230F;
+  cursor: unset;
+  z-index: 2;
+}
+
+.search-query:focus {
+  z-index: 0;
+}
+
+.input-group {
+  font-size: 1.0rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.footer {
+  margin-top: 15rem !important;
+  font-family: 'Raleway', sans-serif !important;
+}
+
+.font-default {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.color_black {
+  color: black !important;
+}
